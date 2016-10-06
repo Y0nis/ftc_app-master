@@ -1,0 +1,11 @@
+Motor Controllers:
+    left motor - P0.0
+    right motor - P0.1
+    sweeper - P1.0
+
+Servo Controllers:
+
+
+GamePad:
+   left axis - direction controller
+   A button - toggle sweeper
