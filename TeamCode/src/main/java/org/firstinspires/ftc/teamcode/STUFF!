@@ -4,10 +4,9 @@ Motor Controllers:
     sweeper - P1.0
 
 Servo Controllers:
-
-Sensors:
-
+    arm -
 
 GamePad:
    left axis - direction controller
    A button - toggle sweeper
+
