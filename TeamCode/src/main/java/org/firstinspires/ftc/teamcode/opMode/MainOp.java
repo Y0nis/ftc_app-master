@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.opMode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
+import com.qualcomm.robotcore.hardware.AccelerationSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.TouchSensor;
@@ -18,6 +19,8 @@ public abstract class MainOp extends OpMode {
     public DcMotor leftMotor, rightMotor, sweeperMotor;
     public TouchSensor touchSensor;
     public Servo armServo;
+
+
     @Override
     public void init() {
         // Motors
@@ -25,9 +28,13 @@ public abstract class MainOp extends OpMode {
         rightMotor = hardwareMap.dcMotor.get("right motor");
         //sweeperMotor = hardwareMap.dcMotor.get("sweeper");
 
+
         //TODO
         // Touch Sensors
-        //touchSensor = hardwareMap.touchSensor.get("touch sensor");
+        touchSensor = hardwareMap.touchSensor.get("touch sensor");
+
+
+
 
         //TODO
         // Servos
