@@ -1,33 +1,27 @@
 package org.firstinspires.ftc.teamcode.opMode.teleop;
 
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.firstinspires.ftc.teamcode.opMode.TimeDelayOp;
+import org.firstinspires.ftc.teamcode.opMode.MainOp;
 
 /**
  * Created by Yonis on 10/6/16.
  */
 
 @TeleOp(group = "testing - manual", name = "Test")
-public class TestOpMode extends TimeDelayOp {
+public class TestOpMode extends OpMode {
+
     @Override
-    public void loop(int CURRENT_STAGE) {
-        switch (CURRENT_STAGE) {
-            case 0:
-                direction.goForward(1.0d);
-                break;
+    public void init() {
+    }
 
-            case 1:
-                direction.goBackward(1.0d);
-                break;
+    int x = 0;
 
-            case 2:
-                direction.turnRight();
-                break;
-
-            case 3:
-                direction.turnLeft();
-                break;
-        }
+    @Override
+    public void loop() {
+        if (gamepad1.a)
+            telemetry.addLine("Button A was pressed!" + x++);
+        telemetry.update();
     }
 }

@@ -14,7 +14,7 @@ import org.firstinspires.ftc.teamcode.controllers.DirectionalControl;
 public abstract class MainOp extends OpMode {
 
     public DirectionalControl direction;
-    public DcMotor leftMotor, rightMotor, sweeper;
+    public DcMotor leftMotor, rightMotor, sweeper, arm;
     public TouchSensor touchSensor;
 
     @Override
@@ -28,9 +28,16 @@ public abstract class MainOp extends OpMode {
         //touchSensor = hardwareMap.touchSensor.get("touch sensor");
 
         // Servos
-        //TODO
 
         // Controllers
         direction = new DirectionalControl(this);
+    }
+
+    public void setSweeperPower(double power) {
+        sweeper.setPower(power);
+    }
+
+    public void setArmPower(double power) {
+        arm.setPower(power);
     }
 }

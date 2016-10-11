@@ -19,16 +19,29 @@ public class DirectionalControl {
         this.opmode = opmode;
     }
 
-    public void turnRight() {
+public void turn(double power) {
+    if (power < 0)
+        turnLeft(power);
+    else
+        turnRight(power);
+}
+
+    public void go(double power) {
+        if (power < 0)
+            goBackward(power);
+        else
+            goForward(power);
+    }
+    public void turnRight(double power) {
         setLeftMotorDirection(FORWARD);
         setRightMotorDirection(REVERSE);
-        setMotorPowers(1.0d);
+        setMotorPowers(power);
     }
 
-    public void turnLeft() {
+    public void turnLeft(double power) {
         setLeftMotorDirection(REVERSE);
         setRightMotorDirection(FORWARD);
-        setMotorPowers(1.0d);
+        setMotorPowers(power);
     }
 
     public void setMotorPowers(double power) {
