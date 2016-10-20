@@ -4,7 +4,7 @@ package org.firstinspires.ftc.teamcode.opMode;
  * Created by Staz on 10/6/2016.
  */
 
-public abstract class TimeDelayOp extends MainOp {
+public abstract class AbstractTimeBasedOp extends AbstractOp {
 
     public int currentStage = 0;
     public int lastStage = 0;

@@ -1,15 +1,14 @@
 package org.firstinspires.ftc.teamcode.opMode.teleop;
 
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
-import org.firstinspires.ftc.teamcode.opMode.MainOp;
+import org.firstinspires.ftc.teamcode.opMode.AbstractOp;
 
 /**
  * Created by Staz on 10/6/2016.
  */
 
-public class ControllerOpMode extends MainOp {
+public class ControllerOpMode extends AbstractOp {
 
     @Override
     public void init() {
@@ -32,28 +31,9 @@ public class ControllerOpMode extends MainOp {
         setSweeperPower(gamepad.right_trigger);
         setArmPower(gamepad.left_trigger);
 
-
         direction.go(gamepad.left_stick_y);
 
         direction.turn(gamepad.right_stick_x);
     }
 
-    /**
-     *
-     * @param isGamepad
-     * @param isPressContinued
-     * @return 0 - no change, 1 - pressed, 2 - released
-     */
-    public int testButton(boolean isGamepad, boolean isPressContinued) {
-        if (isGamepad) {
-            if (!isPressContinued) {
-                isPressContinued = true;
-                return 1;
-            }
-        }else if (isPressContinued) {
-            isPressContinued = false;
-            return 2;
-        }
-        return 0;
-    }
 }

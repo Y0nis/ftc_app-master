@@ -11,7 +11,7 @@ import org.firstinspires.ftc.teamcode.controllers.DirectionalControl;
  * Created by Yonis on 10/6/16.
  */
 
-public abstract class MainOp extends OpMode {
+public abstract class AbstractOp extends OpMode {
 
     public DirectionalControl direction;
     public DcMotor leftMotor, rightMotor, sweeper;

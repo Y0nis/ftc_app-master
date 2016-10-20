@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.opMode.autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
-import org.firstinspires.ftc.teamcode.opMode.MainOp;
+import org.firstinspires.ftc.teamcode.opMode.AbstractOp;
 
 /**
  * Created by Yonis on 10/11/16.
@@ -10,12 +10,9 @@ import org.firstinspires.ftc.teamcode.opMode.MainOp;
 
 
 @Autonomous(group = "test", name = "Test Op")
-public class TestAutonomous extends MainOp
-{
+public class TestAutonomous extends AbstractOp {
     @Override
     public void loop() {
-
-        ;
 
     }
 }

@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.controllers;
 
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-import org.firstinspires.ftc.teamcode.opMode.MainOp;
+import org.firstinspires.ftc.teamcode.opMode.AbstractOp;
 
 import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.FORWARD;
 import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.REVERSE;
@@ -13,9 +13,9 @@ import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.REVERSE;
 
 public class DirectionalControl {
 
-    private MainOp opmode;
+    private AbstractOp opmode;
 
-    public DirectionalControl(MainOp opmode) {
+    public DirectionalControl(AbstractOp opmode) {
         this.opmode = opmode;
     }
 
