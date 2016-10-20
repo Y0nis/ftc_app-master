@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.opMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.IrSeekerSensor;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 
 import org.firstinspires.ftc.teamcode.controllers.DirectionalControl;
@@ -14,18 +15,21 @@ import org.firstinspires.ftc.teamcode.controllers.DirectionalControl;
 public abstract class AbstractOp extends OpMode {
 
     public DirectionalControl direction;
-    public DcMotor leftMotor, rightMotor, sweeper;
+    public DcMotor leftMotor, rightMotor, sweeperMotor, armMotor;
     public TouchSensor touchSensor;
+    public IrSeekerSensor irSensor;
 
     @Override
     public void init() {
         // Motors
         leftMotor = hardwareMap.dcMotor.get("left motor");
         rightMotor = hardwareMap.dcMotor.get("right motor");
-        //sweeper = hardwareMap.dcMotor.get("sweeper");
+        //sweeperMotor = hardwareMap.dcMotor.get("sweeperMotor");
+        //armMotor = hardwareMap.dcMotor.get("armMotor");
 
         // Touch Sensors
         //touchSensor = hardwareMap.touchSensor.get("touch sensor");
+        irSensor = hardwareMap.irSeekerSensor.get("ir sensor");
 
         // Servos
         //TODO
@@ -35,10 +39,10 @@ public abstract class AbstractOp extends OpMode {
     }
 
     public void setSweeperPower(double power) {
-        sweeper.setPower(power);
+        sweeperMotor.setPower(power);
     }
 
     public void setArmPower(double power) {
-        arm.setPower(power);
+        armMotor.setPower(power);
     }
 }

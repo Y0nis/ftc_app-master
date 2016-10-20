@@ -19,14 +19,14 @@ public class DirectionalControl {
         this.opmode = opmode;
     }
 
-public void turn(double power) {
-    if (power < 0)
-        turnLeft(power);
-    else
-        turnRight(power);
-}
+    public void turn(double power) {
+        if (power < 0)
+            turnLeft(power);
+        else
+            turnRight(power);
+    }
 
-    public void go(double power) {
+    public void forward(double power) {
         if (power < 0)
             goBackward(power);
         else

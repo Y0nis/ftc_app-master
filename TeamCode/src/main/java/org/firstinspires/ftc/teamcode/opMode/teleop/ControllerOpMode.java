@@ -31,7 +31,7 @@ public class ControllerOpMode extends AbstractOp {
         setSweeperPower(gamepad.right_trigger);
         setArmPower(gamepad.left_trigger);
 
-        direction.go(gamepad.left_stick_y);
+        direction.forward(gamepad.left_stick_y);
 
         direction.turn(gamepad.right_stick_x);
     }
