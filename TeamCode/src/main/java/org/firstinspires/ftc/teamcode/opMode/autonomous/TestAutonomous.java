@@ -12,7 +12,16 @@ import org.firstinspires.ftc.teamcode.opMode.AbstractOp;
 public class TestAutonomous extends AbstractOp {
     @Override
     public void loop() {
-        telemetry.addData("Current IR Levels: ", irSensor);
+        telemetry.addData("Distance Sensor", distanceSensor.getLightDetected());
+        telemetry.addData("Distance Sensor", distanceSensor.getRawLightDetected());
+//
+//        if (irSensor.signalDetected()) {
+//            telemetry.addData("Current IR Levels: ", irSensor);
+//            telemetry.addData("Current IR Levels: ", irSensor.getAngle());
+//            telemetry.addData("Current IR Levels: ", irSensor.getStrength());
+//        }else
+//            telemetry.addData("ir sensor", "lost");
+//
         telemetry.update();
     }
 }

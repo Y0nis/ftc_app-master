@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.opMode.teleop;
 
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
 import org.firstinspires.ftc.teamcode.opMode.AbstractOp;
@@ -8,6 +9,8 @@ import org.firstinspires.ftc.teamcode.opMode.AbstractOp;
  * Created by Staz on 10/6/2016.
  */
 
+
+@TeleOp(name = "Controller Op", group = "manual")
 public class ControllerOpMode extends AbstractOp {
 
     @Override
