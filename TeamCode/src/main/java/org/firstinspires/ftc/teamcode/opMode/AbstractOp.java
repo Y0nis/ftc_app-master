@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.IrSeekerSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 
-import org.firstinspires.ftc.teamcode.controllers.DirectionalControl;
+import org.firstinspires.ftc.teamcode.controllers.MovementControl;
 
 /**
  * Created by Yonis on 10/6/16.
@@ -15,7 +15,7 @@ import org.firstinspires.ftc.teamcode.controllers.DirectionalControl;
 
 public abstract class AbstractOp extends OpMode {
 
-    public DirectionalControl direction;
+    public MovementControl movement;
     public DcMotor leftMotor, rightMotor, sweeperMotor, armMotor;
     public TouchSensor touchSensor;
     public IrSeekerSensor irSensor;
@@ -26,20 +26,20 @@ public abstract class AbstractOp extends OpMode {
         // Motors
         leftMotor = hardwareMap.dcMotor.get("left motor");
         rightMotor = hardwareMap.dcMotor.get("right motor");
-        sweeperMotor = hardwareMap.dcMotor.get("sweeperMotor");
+        //sweeperMotor = hardwareMap.dcMotor.get("sweeperMotor");
         //armMotor = hardwareMap.dcMotor.get("armMotor");
 
         // Touch Sensors
         //touchSensor = hardwareMap.touchSensor.get("touch sensor");
         //irSensor = hardwareMap.irSeekerSensor.get("ir sensor");
 
-       // distanceSensor = hardwareMap.opticalDistanceSensor.get("distance sensor");
+        // distanceSensor = hardwareMap.opticalDistanceSensor.get("distance sensor");
 
         // Servos
         //TODO
 
         // Controllers
-        direction = new DirectionalControl(this);
+        movement = new MovementControl(this);
     }
 
     public void setSweeperPower(double power) {

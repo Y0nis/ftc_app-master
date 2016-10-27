@@ -2,6 +2,7 @@ Motor Controllers:
     left motor - P0.0
     right motor - P0.1
     sweeper - P1.0
+    arm - P1.1
 
 Servo Controllers:
     arm -
@@ -9,7 +10,6 @@ Servo Controllers:
 GamePad:
    left axis - direction controller
    A button - toggle sweeper
-
 
 TeleOps
     TestOp - Stuff we test things with

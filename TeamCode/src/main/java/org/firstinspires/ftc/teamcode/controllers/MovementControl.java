@@ -11,27 +11,25 @@ import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.REVERSE;
  * Created by Staz on 10/6/2016.
  */
 
-public class DirectionalControl {
+public class MovementControl {
 
     private AbstractOp opmode;
 
-    public DirectionalControl(AbstractOp opmode) {
+    public MovementControl(AbstractOp opmode) {
         this.opmode = opmode;
     }
 
+    /**
+     *
+     * @param power [-1, 0) -> left. (0, 1] -> right
+     */
     public void turn(double power) {
         if (power < 0)
-            turnLeft(power);
+            turnLeft(-power);
         else
             turnRight(power);
     }
 
-    public void forward(double power) {
-        if (power < 0)
-            goBackward(power);
-        else
-            goForward(power);
-    }
     public void turnRight(double power) {
         setLeftMotorDirection(FORWARD);
         setRightMotorDirection(REVERSE);
@@ -78,5 +76,12 @@ public class DirectionalControl {
     public void goBackward(double power) {
         setMotorDirections(REVERSE);
         setMotorPowers(power);
+    }
+
+    public void go(double power) {
+        if (power < 0)
+            goBackward(-power);
+        else
+            goForward(power);
     }
 }
